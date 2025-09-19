@@ -24,3 +24,34 @@ injected into the page with AJAX, and separate requests need to be made to get e
 ### Achievements (`profile/achievements.json`)
 Achievements are on the `/achievement` endpoint. Use the list selector to get the list of achievements on the page, and then get their IDs from the `href` attribute
 of the link. Use the next button's selector to request the next page and scrape the next set of achievements until the href is `javascript:void(0);`.
+
+## Types
+
+All selectors are accompanied by a `type` field, which specifies what the expected type is for the field. At current, only the following types are used:
+
+| Name      | Description                                                                           |
+| --------- | ------------------------------------------------------------------------------------- |
+| `integer` | The type is an integer                                                                |
+| `string`  | The type is a string                                                                  |
+| `boolean` | The type is expected to be 'true' if the selector returns a result; `false` otherwise |
+
+There are two formats for type:
+
+* Common form - the selector is of this type
+
+```json
+{
+    "type": "integer"
+}
+```
+
+* Multiple value form - the selector results in multiple named values; this is only used with regex selectors that have named groups
+
+```json
+{
+    "type": {
+        "Server": "string",
+        "DC": "string"
+    }
+}
+```
