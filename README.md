@@ -33,7 +33,7 @@ All selectors are accompanied by a `type` field, which specifies what the expect
 | --------- | ------------------------------------------------------------------------------------- |
 | `integer` | The type is an integer                                                                |
 | `string`  | The type is a string                                                                  |
-| `boolean` | The type is expected to be 'true' if the selector returns a result; `false` otherwise |
+| `boolean` | The type is expected to be `true` if the selector returns a result; `false` otherwise |
 
 There are two formats for type:
 
